@@ -1,0 +1,77 @@
+{
+  "BesitzerDialog.tsx": {
+    "vorname": "z. B. Max",
+    "nachname": "z. B. Müller",
+    "email": "z. B. max@example.com",
+    "strasse": "z. B. Hauptstraße",
+    "hausnummer": "z. B. 42",
+    "plz": "z. B. 10115",
+    "ort": "z. B. Berlin",
+    "telefon": "z. B. +49 30 123456",
+    "notizen": "Allergien, bevorzugte Kontaktzeit, Abholzeiten..."
+  },
+  "HundeDialog.tsx": {
+    "name": "z. B. Buddy",
+    "rasse": "z. B. Deutscher Schäferhund",
+    "geburtsdatum": "Geburtsdatum wählen",
+    "geschlecht": "z. B. Männlich",
+    "gewicht_kg": "z. B. 28",
+    "kastriert": "Ja/Nein",
+    "impfstatus": "z. B. Vollständig geimpft",
+    "fuetterungshinweise": "Futterart, Menge, Zeiten, Allergien...",
+    "medikamente": "Medikamente, Dosierung, Verabreichungszeiten...",
+    "tierarzt_name": "z. B. Dr. Schmidt, Praxis Berlin",
+    "tierarzt_telefon": "z. B. +49 30 987654",
+    "besitzer": "Besitzer wählen"
+  },
+  "BuchungenDialog.tsx": {
+    "hund": "Welcher Hund kommt?",
+    "besitzer": "Wem gehört der Hund?",
+    "anreise": "Wann kommt der Hund an?",
+    "abreise": "Wann reist der Hund ab?",
+    "platz": "z. B. Platz 1, Platz 2",
+    "status": "z. B. Geplant",
+    "preis_gesamt": "z. B. 199,50",
+    "zahlungsstatus": "z. B. Offen",
+    "interne_notizen": "Besonderheiten, Verhaltensnotizen, spezielle Anforderungen..."
+  },
+  "BuchungsanfragenDialog.tsx": {
+    "anfrage_vorname": "z. B. Anna",
+    "anfrage_nachname": "z. B. Schmidt",
+    "anfrage_telefon": "z. B. +49 30 246810",
+    "anfrage_email": "z. B. anna@example.com",
+    "hund_name": "z. B. Rex",
+    "hund_rasse": "z. B. Labrador",
+    "hund_groesse": "z. B. Groß",
+    "wunsch_anreise": "Gewünschter Ankunftstag",
+    "wunsch_abreise": "Gewünschter Abreisetag",
+    "nachricht": "Besondere Wünsche, medizinische Besonderheiten, Verhaltensnoten...",
+    "anfrage_status": "z. B. Offen"
+  },
+  "WebsiteDialog.tsx": {
+    "unternehmensname": "z. B. Pfotenpension am Wald",
+    "slogan": "z. B. Dein Hund ist bei uns in besten Pfoten",
+    "beschreibung": "Wer sind wir? Wie lange betreiben wir die Pension? Was ist unsere Philosophie?",
+    "leistungen": "Betreuung, Gassi, Training, spezielle Pflege, Besonderheiten...",
+    "anzahl_plaetze": "z. B. 8",
+    "oeffnungszeiten": "Öffnungszeiten für Abholungen, Telefon-Hotline, Feiertags-Regelungen...",
+    "website_telefon": "z. B. +49 30 123456",
+    "website_email": "z. B. info@pfotenpension.de",
+    "website_url": "z. B. https://www.pfotenpension.de",
+    "website_strasse": "z. B. Waldstraße",
+    "website_hausnummer": "z. B. 15a",
+    "website_plz": "z. B. 10115",
+    "website_ort": "z. B. Berlin",
+    "instagram": "z. B. https://instagram.com/pfotenpension",
+    "facebook": "z. B. https://facebook.com/pfotenpension"
+  },
+  "PfotenPortraetsDialog.tsx": {
+    "hund": "Welcher Hund?",
+    "besitzer": "Besitzer wählen",
+    "buchung": "Zugehörige Buchung (optional)",
+    "widmung": "Persönliche Botschaft, Grüße, Zitate über den Hund...",
+    "besondere_erlebnisse": "Highlights aus dem Aufenthalt, lustige Momente, besondere Aktivitäten...",
+    "erstellungsdatum": "Wann wurde das Porträt erstellt?",
+    "zusatztext": "Weitere Informationen, Tipps, Empfehlungen..."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "en": {
+      " — 1 offene Buchungsanfrage wartet auf deine Bestätigung.": " — 1 open booking request awaiting your confirmation.",
+      " — {0} offene Buchungsanfragen warten auf deine Bestätigung.": " — {0} open booking requests awaiting your confirmation.",
+      "Aktuell sind alle Plätze frei.": "All spots are currently available.",
+      "Anfrage abgelehnt": "Request declined",
+      "Anfrage bestätigen": "Confirm Request",
+      "Anfrage bestätigt": "Request confirmed",
+      "Anfrage erfassen": "Log Request",
+      "Belegt": "Occupied",
+      "Buchung": "Booking",
+      "Buchung verschoben": "Booking rescheduled",
+      "Check-in bestätigen": "Confirm Check-in",
+      "Check-in gebucht": "Check-in booked",
+      "Check-out bestätigen": "Confirm Check-out",
+      "Check-out gebucht": "Check-out booked",
+      "Frei": "Available",
+      "Heute abreisend": "Departing today",
+      "Heute anreisend": "Arriving today",
+      "Hund": "Dog",
+      "Keine Anreisen heute — alles ruhig.": "No arrivals today — all quiet.",
+      "Keine offenen Anfragen — alles bearbeitet.": "No open requests — all handled.",
+      "Neue Buchung": "New Booking",
+      "Offene Anfragen": "Open Requests",
+      "Platz bereits belegt in diesem Zeitraum": "Spot already occupied in this period",
+      "Zeitraum geändert": "Period changed",
+      "eingecheckt": "checked in",
+      "offen": "open",
+      "{0} Hunde genießen ihren Aufenthalt.": "{0} dogs are enjoying their stay.",
+      "{0} kommt heute an — {1} reist ab.": "{0} arriving today — {1} departing.",
+      "{0} kommt heute an.": "{0} arriving today.",
+      "{0} reist heute ab.": "{0} departing today.",
+      "✓ Bestätigen": "✓ Confirm"
+    }
+  },
+  "v": 1
+}
