@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Kontaktinformationen, Adresse). Keine numerischen Felder, keine applookup-Ziele mit Preis-Spalten, keine Datumspaare für Berechnungen — nichts berechenbar."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [
+        "geschlecht",
+        "impfstatus",
+        "kastriert"
+      ],
+      "computed_keys": [],
+      "reason": "Tierregister (Name, Rasse, Gewicht, Impfstatus, Medikamente, Tierarzt, Besitzer-Applookup). Gewicht ist nur ein Eingabefeld, keine Berechnung. Defaults für Lookup-Felder mit offensichtlichen Startwerten (Geschlecht/Impfstatus=Unbekannt, Kastriert=false)."
+    },
+    "Buchungen": {
+      "placeholders_set": 10,
+      "defaults_keys": [
+        "anreise",
+        "abreise",
+        "status",
+        "zahlungsstatus"
+      ],
+      "computed_keys": [
+        "_buchung_dauer_nächte"
+      ],
+      "reason": "Aufenthalts-Entity (Hund, Besitzer, Anreise/Abreise, Platz, Status, Preis, Zahlungsstatus). Zwei Datumsfelder als PFLICHT-Paar für Dauer-Berechnung (dateDiff). Ein virtueller Dauer-Key zeigt die Nächte in der Berechnung-Übersicht an. Kein applookup mit Preis-Target vorhanden, daher kein Gesamtpreis-computed. Defaults für Datum (heute/+3 Tage), Status (Geplant), Zahlungsstatus (Offen)."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": [
+        "anfrage_status"
+      ],
+      "computed_keys": [
+        "_anfrage_dauer_nächte"
+      ],
+      "reason": "Anfrage-Erfassungsform (Kontaktdaten, Hundinfo, Wunschdaten). Zwei Datumsfelder (Wunsch-Anreise/Abreise) als PFLICHT-Paar für optionale Dauer-Anzeige. Default für Anfrage-Status (Offen)."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [
+        "anzahl_plaetze"
+      ],
+      "computed_keys": [],
+      "reason": "Unternehmensmetadaten (Name, Texte, Kontakt, Adresse, Social-Media). Ein Number-Feld (Plätze) mit Default=8. Keine Datumspaare, keine applookup-Multiplikationen, keine berechenbaren Felder."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": [
+        "erstellungsdatum"
+      ],
+      "computed_keys": [],
+      "reason": "Content-Entity (Applookups auf Hund/Besitzer/Buchung + Textfelder). Ein applookup auf Buchungen mit Preis-Target, aber Preis dient nur der Anzeige (keine Rechnung). Default nur für Erstellungsdatum (heute)."
+    }
+  }
+}

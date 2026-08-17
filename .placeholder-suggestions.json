@@ -1,0 +1,78 @@
+{
+  "BesitzerDialog.tsx": {
+    "vorname": "z. B. Thomas",
+    "nachname": "z. B. Müller",
+    "telefon": "z. B. 030 555 123",
+    "email": "z. B. thomas@beispiel.de",
+    "strasse": "z. B. Hauptstraße",
+    "hausnummer": "z. B. 42",
+    "plz": "z. B. 10115",
+    "ort": "z. B. Berlin",
+    "notizen": "Besonderheiten, Allergien, Wünsche..."
+  },
+  "HundeDialog.tsx": {
+    "name": "z. B. Max",
+    "rasse": "z. B. Labrador",
+    "geburtsdatum": "Geburtsdatum wählen",
+    "geschlecht": "z. B. Männlich, Weiblich",
+    "gewicht_kg": "z. B. 30",
+    "kastriert": "true/false",
+    "impfstatus": "z. B. Vollständig geimpft",
+    "fuetterungshinweise": "Futtersorte, Menge, Zeiten, Unverträglichkeiten...",
+    "medikamente": "Medikamente, Dosierung, Besonderheiten...",
+    "tierarzt_name": "z. B. Dr. Schmidt, Praxis am Park",
+    "tierarzt_telefon": "z. B. 030 555 789",
+    "besitzer": "Welcher Besitzer?"
+  },
+  "BuchungenDialog.tsx": {
+    "hund": "Welcher Hund kommt?",
+    "besitzer": "Welcher Besitzer?",
+    "anreise": "Wann kommt der Hund?",
+    "abreise": "Wann reist der Hund ab?",
+    "anzahl_naechte": "Wird automatisch berechnet",
+    "platz": "z. B. Platz 1, Platz 2",
+    "status": "z. B. Geplant, Anwesend",
+    "preis_gesamt": "z. B. 150,00",
+    "zahlungsstatus": "z. B. Offen, Bezahlt",
+    "interne_notizen": "Besondere Wünsche, Hinweise..."
+  },
+  "BuchungsanfragenDialog.tsx": {
+    "anfrage_vorname": "z. B. Thomas",
+    "anfrage_nachname": "z. B. Müller",
+    "anfrage_telefon": "z. B. 030 555 123",
+    "anfrage_email": "z. B. thomas@beispiel.de",
+    "hund_name": "z. B. Max",
+    "hund_rasse": "z. B. Labrador",
+    "hund_groesse": "z. B. Klein, Mittel, Groß",
+    "wunsch_anreise": "Gewünschtes Anreisedatum",
+    "wunsch_abreise": "Gewünschtes Abreisedatum",
+    "nachricht": "Besondere Wünsche, Fragen...",
+    "anfrage_status": "z. B. Offen, Bestätigt"
+  },
+  "WebsiteDialog.tsx": {
+    "unternehmensname": "z. B. Pfotenpension Berlin",
+    "slogan": "z. B. Hundepension mit Herz",
+    "beschreibung": "Über die Pension, die Geschichte, der Betrieb...",
+    "leistungen": "Eine Leistung pro Zeile",
+    "anzahl_plaetze": "z. B. 8",
+    "oeffnungszeiten": "Öffnungszeiten — eine pro Zeile",
+    "website_telefon": "z. B. 030 555 1234",
+    "website_email": "z. B. info@pfotenpension.de",
+    "website_url": "z. B. https://www.pfotenpension.de",
+    "website_strasse": "z. B. Hauptstraße",
+    "website_hausnummer": "z. B. 42",
+    "website_plz": "z. B. 10115",
+    "website_ort": "z. B. Berlin",
+    "instagram": "z. B. https://instagram.com/pfotenpension",
+    "facebook": "z. B. https://facebook.com/pfotenpension"
+  },
+  "PfotenPortraetsDialog.tsx": {
+    "hund": "Welcher Hund?",
+    "besitzer": "Welcher Besitzer?",
+    "buchung": "Zugehörige Buchung (optional)",
+    "widmung": "Persönliche Widmung für den Hundebesitzer...",
+    "besondere_erlebnisse": "Besondere Momente während des Aufenthalts...",
+    "erstellungsdatum": "Wann wurde das Porträt erstellt?",
+    "zusatztext": "Weitere Anmerkungen, Anekdoten..."
+  }
+}
