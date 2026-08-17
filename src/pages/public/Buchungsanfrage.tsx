@@ -19,7 +19,7 @@ interface FormState {
   anfrage_email: string;
   hund_name: string;
   hund_rasse: string;
-  hund_groesse: '' | 'klein' | 'mittel' | 'gross';
+  hund_groesse: null | 'klein' | 'mittel' | 'gross';
   wunsch_anreise: string;
   wunsch_abreise: string;
   nachricht: string;
@@ -32,7 +32,7 @@ const EMPTY: FormState = {
   anfrage_email: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  hund_groesse: null,
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',

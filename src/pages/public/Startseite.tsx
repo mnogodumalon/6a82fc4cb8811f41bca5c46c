@@ -85,8 +85,9 @@ export default function Startseite() {
           const ep = p.endpoints?.find(e => e.op === 'list');
           if (ep) {
             const records = await listPublicRecords(c!, p, { appId: ep.app_id, limit: 1 });
-            if (records && records.length > 0) {
-              setSite(records[0] as WebsiteRecord);
+            const recordList = records ? Object.values(records as unknown as Record<string, unknown>) : [];
+            if (recordList.length > 0) {
+              setSite(recordList[0] as WebsiteRecord);
             }
           }
         }
@@ -99,7 +100,7 @@ export default function Startseite() {
   }, []);
 
   const galleryImages: string[] = site?.fields.galerie_bilder
-    ? site.fields.galerie_bilder.split ? [site.fields.galerie_bilder] : [site.fields.galerie_bilder]
+    ? [site.fields.galerie_bilder]
     : [];
 
   if (loading || unavailable || !cfg || !page) {
@@ -351,7 +352,7 @@ export default function Startseite() {
                   className="flex items-center gap-2 bg-white hover:bg-amber-50 text-stone-700 font-medium px-5 py-2.5 rounded-full border border-stone-200 shadow-sm transition-colors text-sm"
                 >
                   <IconBrandInstagram size={18} className="text-pink-500" />
-                  Instagram
+                  {tx('Instagram')}
                 </a>
               )}
               {f.facebook && (
@@ -362,7 +363,7 @@ export default function Startseite() {
                   className="flex items-center gap-2 bg-white hover:bg-amber-50 text-stone-700 font-medium px-5 py-2.5 rounded-full border border-stone-200 shadow-sm transition-colors text-sm"
                 >
                   <IconBrandFacebook size={18} className="text-blue-500" />
-                  Facebook
+                  {tx('Facebook')}
                 </a>
               )}
             </div>
