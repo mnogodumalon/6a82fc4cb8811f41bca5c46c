@@ -1,0 +1,42 @@
+{
+  "pages": {
+    "en": {
+      "Abreise": "Departure",
+      "Abreisen heute": "Departures Today",
+      "Aktuell sind keine Hunde angemeldet.": "No dogs currently checked in.",
+      "Anfrage bestätigen": "Confirm Request",
+      "Anfrage erfassen": "Record Request",
+      "Anfrage manuell erfassen": "Record Request Manually",
+      "Anreise": "Arrival",
+      "Anreisen heute": "Arrivals Today",
+      "Belegt heute": "Occupied Today",
+      "Bestätigen": "Confirm",
+      "Buchungsanfrage bestätigen": "Confirm Booking Request",
+      "Buchungsanfragen": "Booking Requests",
+      "Check-in": "Check-In",
+      "Check-in durchführen": "Perform Check-In",
+      "Check-out": "Check-Out",
+      "Check-out durchführen": "Perform Check-Out",
+      "Heute": "Today",
+      "Heute reisen {0} an.": "{0} arriving today.",
+      "Keine offenen Buchungsanfragen.": "No open booking requests.",
+      "Keine weiteren Anreisen geplant.": "No further arrivals scheduled.",
+      "Neue Buchung": "New Booking",
+      "Nächste Anreise: {0} am {1}": "Next Arrival: {0} on {1}",
+      "Offen": "Open",
+      "Offene Anfragen": "Open Requests",
+      "Unbekannt": "Unknown",
+      "hat eine unverbindliche Buchungsanfrage gestellt.": "has submitted a non-binding booking request.",
+      "{0} Gäste im Haus — ruhiger Tag heute.": "{0} guests on site — quiet day today.",
+      "{0} neue Buchungsanfragen warten auf Bearbeitung.": "{0} new booking requests are awaiting processing.",
+      "{0} reisen ab.": "{0} departing.",
+      "{0} — Anfrage abgelehnt": "{0} — request declined",
+      "{0} — Anfrage bestätigt": "{0} — request confirmed",
+      "{0} — Zeitraum angepasst": "{0} — period adjusted",
+      "{0} — ausgecheckt": "{0} — checked out",
+      "{0} — eingecheckt": "{0} — checked in",
+      "{0} — verschoben": "{0} — rescheduled"
+    }
+  },
+  "v": 1
+}
