@@ -84,7 +84,7 @@ export default function Hundepension() {
 
         try {
           const records = await listPublicRecords(c, p, { appId: ep.app_id, limit: 1 });
-          setSite((records[0] as WebsiteRecord) ?? null);
+          setSite((records[0] as unknown as WebsiteRecord) ?? null);
         } catch (err) {
           if (err instanceof PageUnavailableError) setUnavailable(true);
         } finally {
@@ -405,7 +405,7 @@ export default function Hundepension() {
                   style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
                 >
                   <IconBrandInstagram size={20} stroke={1.5} />
-                  Instagram
+                  {tx('Instagram')}
                 </a>
               )}
               {facebook && (
@@ -417,7 +417,7 @@ export default function Hundepension() {
                   style={{ background: '#1877f2' }}
                 >
                   <IconBrandFacebook size={20} stroke={1.5} />
-                  Facebook
+                  {tx('Facebook')}
                 </a>
               )}
             </div>

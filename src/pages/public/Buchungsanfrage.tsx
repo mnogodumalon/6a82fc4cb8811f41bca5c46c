@@ -18,7 +18,7 @@ const STEP_HUND = 1;
 const STEP_ZEITRAUM = 2;
 const STEP_DANKE = 3;
 
-type HundGroesse = 'klein' | 'mittel' | 'gross' | '';
+type HundGroesse = 'klein' | 'mittel' | 'gross';
 
 interface FormState {
   anfrage_vorname: string;
@@ -27,7 +27,7 @@ interface FormState {
   anfrage_telefon: string;
   hund_name: string;
   hund_rasse: string;
-  hund_groesse: HundGroesse;
+  hund_groesse: HundGroesse | null;
   wunsch_anreise: string;
   wunsch_abreise: string;
   nachricht: string;
@@ -40,17 +40,11 @@ const INITIAL_FORM: FormState = {
   anfrage_telefon: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  hund_groesse: null,
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',
 };
-
-const GROESSE_OPTIONS: { key: HundGroesse; label: string }[] = [
-  { key: 'klein', label: 'Klein (bis 10 kg)' },
-  { key: 'mittel', label: 'Mittel (10–25 kg)' },
-  { key: 'gross', label: 'Groß (über 25 kg)' },
-];
 
 function StepIndicator({ step }: { step: number }) {
   const steps = [
@@ -126,6 +120,12 @@ function Input({ id, type = 'text', value, onChange, placeholder, required, auto
 }
 
 export default function Buchungsanfrage() {
+  const GROESSE_OPTIONS: { key: HundGroesse; label: string }[] = [
+  { key: 'klein', label: tx('Klein (bis 10 kg)') },
+  { key: 'mittel', label: tx('Mittel (10–25 kg)') },
+  { key: 'gross', label: tx('Groß (über 25 kg)') },
+];
+
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -157,7 +157,7 @@ export default function Buchungsanfrage() {
     challengeWarmed.current = true;
     const ep = page.endpoints?.find(e => e.op === 'create');
     if (ep?.app_id) {
-      prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`).catch(() => {});
+      void prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`);
     }
   };
 
@@ -216,7 +216,7 @@ export default function Buchungsanfrage() {
       };
       if (form.anfrage_telefon.trim()) payload.anfrage_telefon = form.anfrage_telefon.trim();
       if (form.hund_rasse.trim()) payload.hund_rasse = form.hund_rasse.trim();
-      if (form.hund_groesse) payload.hund_groesse = form.hund_groesse;
+      if (form.hund_groesse != null) payload.hund_groesse = form.hund_groesse;
       if (form.nachricht.trim()) payload.nachricht = form.nachricht.trim();
 
       await createPublicRecord(cfg, page, payload);
@@ -382,10 +382,10 @@ export default function Buchungsanfrage() {
                 <button
                   key={opt.key}
                   type="button"
-                  onClick={() => { warmChallenge(); set('hund_groesse')(opt.key); }}
+                  onClick={() => { warmChallenge(); setForm(f => ({ ...f, hund_groesse: opt.key })); }}
                   className={[
                     'rounded-lg border px-4 py-3 text-sm font-medium text-left transition-colors',
-                    form.hund_groesse === opt.key
+                    form.hund_groesse != null && form.hund_groesse === opt.key
                       ? 'border-primary bg-primary/10 text-primary'
                       : 'border-border bg-background text-foreground hover:border-primary/50',
                   ].join(' ')}
