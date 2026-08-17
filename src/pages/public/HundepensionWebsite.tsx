@@ -35,12 +35,6 @@ interface WebsiteRecord {
   };
 }
 
-const GROESSE_LABELS: Record<string, string> = {
-  klein: 'Klein (bis 10 kg)',
-  mittel: 'Mittel (10–25 kg)',
-  gross: 'Groß (über 25 kg)',
-};
-
 function HeroSection({
   website,
   onBuchungClick,
@@ -64,7 +58,7 @@ function HeroSection({
         {f.logo && (
           <img
             src={f.logo}
-            alt={f.unternehmensname ?? 'Logo'}
+            alt={f.unternehmensname ?? tx('Logo')}
             className="h-16 md:h-20 mx-auto mb-6 object-contain drop-shadow-lg"
           />
         )}
@@ -137,7 +131,7 @@ function GalerieSection({ website }: { website: WebsiteRecord }) {
   const f = website.fields;
   if (!f.galerie_bilder) return null;
 
-  const urls = f.galerie_bilder.split ? [f.galerie_bilder] : [];
+  const urls = typeof f.galerie_bilder === 'string' && f.galerie_bilder ? [f.galerie_bilder] : [];
   if (urls.length === 0) return null;
 
   return (
@@ -165,6 +159,12 @@ function BuchungsFormular({
   page: PublicPageConfig;
   onSuccess: () => void;
 }) {
+  const GROESSE_LABELS: Record<string, string> = {
+  klein: 'Klein (bis 10 kg)',
+  mittel: 'Mittel (10–25 kg)',
+  gross: 'Groß (über 25 kg)',
+};
+
   const [form, setForm] = useState({
     anfrage_vorname: '',
     anfrage_nachname: '',
@@ -172,7 +172,7 @@ function BuchungsFormular({
     anfrage_telefon: '',
     hund_name: '',
     hund_rasse: '',
-    hund_groesse: '',
+    hund_groesse: 'mittel', /* i18n-exempt */
     wunsch_anreise: '',
     wunsch_abreise: '',
     nachricht: '',
@@ -516,7 +516,7 @@ export default function HundepensionWebsite() {
             try {
               const records = await listPublicRecords(c, p, { appId: websiteEp.app_id, limit: 1 });
               const first = records[0] ?? null;
-              setWebsite(first as WebsiteRecord | null);
+              setWebsite(first as unknown as WebsiteRecord | null);
             } catch {
               // Website data unavailable — page renders without it
             }
