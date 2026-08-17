@@ -50,7 +50,7 @@ interface FormState {
   anfrage_email: string;
   hund_name: string;
   hund_rasse: string;
-  hund_groesse: string;
+  hund_groesse: string | undefined;
   wunsch_anreise: string;
   wunsch_abreise: string;
   nachricht: string;
@@ -63,7 +63,7 @@ const EMPTY_FORM: FormState = {
   anfrage_email: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  hund_groesse: undefined as string | undefined,
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',
@@ -105,7 +105,6 @@ export default function HundepensionLanding() {
     if (!cfg || !page) return;
     const ep = page.endpoints?.find((e) => e.op === 'list' && e.entity === 'website');
     if (!ep) {
-      setWebsiteLoading(false);
       return;
     }
     listPublicRecords(cfg, page, { appId: ep.app_id, limit: 1 })
@@ -294,7 +293,7 @@ export default function HundepensionLanding() {
               <div className="mt-6 inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
                 <IconPaw size={18} className="text-amber-500 shrink-0" />
                 <span className="text-amber-800 font-medium">
-                  {tx(`${plaetze} Plätze verfügbar`)}
+                  {tx(tx`${plaetze} Plätze verfügbar`)}
                 </span>
               </div>
             )}
@@ -360,7 +359,7 @@ export default function HundepensionLanding() {
                       className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
                     >
                       <IconBrandInstagram size={16} className="shrink-0" />
-                      Instagram
+                      {tx('Instagram')}
                     </a>
                   )}
                   {facebook && (
@@ -371,7 +370,7 @@ export default function HundepensionLanding() {
                       className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                     >
                       <IconBrandFacebook size={16} className="shrink-0" />
-                      Facebook
+                      {tx('Facebook')}
                     </a>
                   )}
                 </div>
@@ -469,7 +468,7 @@ export default function HundepensionLanding() {
                       onChange={(e) => setField('anfrage_email', e.target.value)}
                       onFocus={prepareIfNeeded}
                       className={`w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 transition ${errors.anfrage_email ? 'border-red-400' : 'border-gray-300'}`}
-                      placeholder="max@beispiel.de"
+                      placeholder={tx('max@beispiel.de')}
                     />
                     {errors.anfrage_email && (
                       <p className="mt-1 text-xs text-red-500">{errors.anfrage_email}</p>
