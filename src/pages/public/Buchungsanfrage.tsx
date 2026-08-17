@@ -24,6 +24,8 @@ type FormState = {
   nachricht: string;
 };
 
+const NO_GROESSE = ''; /* i18n-exempt */
+
 const INITIAL: FormState = {
   anfrage_vorname: '',
   anfrage_nachname: '',
@@ -31,19 +33,19 @@ const INITIAL: FormState = {
   anfrage_telefon: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  hund_groesse: NO_GROESSE,
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',
 };
 
-const GROESSE_OPTIONS = [
-  { key: 'klein', label: 'Klein (bis 10 kg)' },
-  { key: 'mittel', label: 'Mittel (10–25 kg)' },
-  { key: 'gross', label: 'Groß (über 25 kg)' },
+export default function Buchungsanfrage() {
+  const GROESSE_OPTIONS = [
+  { key: 'klein', label: tx('Klein (bis 10 kg)') },
+  { key: 'mittel', label: tx('Mittel (10–25 kg)') },
+  { key: 'gross', label: tx('Groß (über 25 kg)') },
 ];
 
-export default function Buchungsanfrage() {
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -78,7 +80,7 @@ export default function Buchungsanfrage() {
     challengePrepared.current = true;
     const ep = page.endpoints?.find(e => e.op === 'create');
     if (ep) {
-      prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`).catch(() => {});
+      prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`);
     }
   };
 
