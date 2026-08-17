@@ -1,0 +1,43 @@
+{
+  "pages": {
+    "en": {
+      "+ Neue Buchung": "+ New Booking",
+      "Aktuell anwesend": "Currently Present",
+      "Anfrage offen": "Request Pending",
+      "Aufenthaltsdauer geändert": "Stay Duration Changed",
+      "Bestätigen": "Confirm",
+      "Buchung erstellen": "Create Booking",
+      "Buchung verschoben": "Booking Rescheduled",
+      "Buchungsanfrage bestätigen": "Confirm Booking Request",
+      "Check-in": "Check-In",
+      "Check-in durchführen": "Perform Check-In",
+      "Check-out": "Check-Out",
+      "Check-out durchführen": "Perform Check-Out",
+      "Derzeit sind keine Hunde anwesend.": "No dogs currently present.",
+      "Heute Abreise": "Departing Today",
+      "Heute Abreise & Anfragen": "Departures Today & Requests",
+      "Heute Anreise": "Arriving Today",
+      "Heute abreisend": "Departing Today",
+      "Heute reisen {0} an und {1} ab.": "Today {0} arrive and {1} depart.",
+      "Heute reist niemand an — alles entspannt.": "No arrivals today — all quiet.",
+      "Heute reist {0} ab.": "Today {0} departs.",
+      "Heute reist {0} an.": "Today {0} arrives.",
+      "Hund": "Dog",
+      "Jetzt bestätigen": "Confirm Now",
+      "Keine Abreisen oder offenen Anfragen heute.": "No departures or open requests today.",
+      "Neue Buchungsanfrage von {0} {1} — {2} soll vom {3} bis {4} bleiben.": "New booking request from {0} {1} — {2} is scheduled to stay from {3} to {4}.",
+      "Offene Anfragen": "Open Requests",
+      "Plätze belegt": "Spots Occupied",
+      "Richte deine Pension ein — trag die erste Buchung ein.": "Set up your pension — add the first booking.",
+      "Unbekannt": "Unknown",
+      "Unbekannter Hund": "Unknown Dog",
+      "{0} neue Buchungsanfragen warten auf deine Antwort.": "{0} new booking requests are awaiting your response.",
+      "{0} {1} — Anfrage abgelehnt": "{0} {1} — Request Declined",
+      "{0} {1} — Anfrage bestätigt": "{0} {1} — Request Confirmed",
+      "{0} — aktuell zu Gast.": "{0} — currently a guest.",
+      "{0} — ausgecheckt": "{0} — checked out",
+      "{0} — eingecheckt": "{0} — checked in"
+    }
+  },
+  "v": 1
+}

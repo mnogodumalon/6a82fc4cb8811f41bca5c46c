@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "hundepension",
+      "type": "custom",
+      "entity": "website",
+      "title": "Hundepension",
+      "published": true,
+      "fields": []
+    }
+  ]
+}
