@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 8,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Name, Adresse, Kontakt). Keine Lookup-Kette, keine Berechnungen möglich."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Tier-Stammdaten mit applookup auf Besitzer. Gewicht ist reine Datenerfassung, nicht berechenbar. Keine Preis-Targets im applookup."
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anreise", "abreise", "status", "zahlungsstatus"],
+      "computed_keys": ["_buchung_aufenthalt_dauer_nächte"],
+      "reason": "Aufenthalts-Entity mit Datumspaar anreise/abreise. Keine applookup mit Preis-Target (Platz ist statisches Lookup) → nur Dauer-Computed, Preis bleibt manuell eingegeben."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": ["wunsch_anreise", "wunsch_abreise", "anfrage_status"],
+      "computed_keys": ["_anfrage_aufenthalt_dauer_nächte"],
+      "reason": "Anfrage-Formular mit Wunsch-Datumspaar (wunsch_anreise/abreise). Virtueller Dauer-Computed für User-Übersicht, Status auf 'offen' vorbelegt."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Unternehmensinfo (Name, Öffnungszeiten, Kontakt, Social Media). Ein Number-Feld (Anzahl Plätze), aber keine Berechnungen. Reine Stammdaten."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Galerien/Erinnerungseinträge mit applookup auf Hunde/Besitzer/Buchungen. Reine Datenerfassung (Widmung, Erlebnisse), keine Berechnungen."
+    }
+  }
+}
