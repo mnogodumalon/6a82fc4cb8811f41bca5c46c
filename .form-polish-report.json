@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten-Entity mit Kontaktinformationen (Name, Email, Adresse). Keine Number-Felder, keine applookup-Ketten mit Preis-Targets, keine berechenbaren Größen."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Hundeprofile mit Stammdaten (Name, Rasse, Gewicht, Impfstatus, Tierarzt). Das Gewicht ist reine Information, nicht Teil einer Kalkulationsformel. Applookup auf Besitzer hat keine Preis-Feldverbindung."
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["status", "zahlungsstatus", "anreise", "abreise"],
+      "computed_keys": ["_buchung_dauer_nächte"],
+      "reason": "Aufenthalts-Buchung mit Datumspaar (anreise/abreise) → Dauer-Berechnung gesetzt. Kein applookup mit Preis-Target vorhanden (Hunde.gewicht_kg ist keine Preis-Spalte), daher keine Gesamtkosten-Formel. Status-Defaults auf 'geplant' + Zahlungsstatus auf 'offen'."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": ["anfrage_status", "wunsch_anreise", "wunsch_abreise"],
+      "computed_keys": [],
+      "reason": "Anfrage-Management für Buchungsinteressenten. Reine Erfassung von Kontaktdaten und Wünschen, keine Berechnung nötig. Status defaultet auf 'offen', Datumsbereich auf heute + 3 Tage."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Website-Konfiguration und öffentliche Unternehmensinformationen. Reine statische Einstellungen, keine Number-Berechnungen (anzahl_plaetze ist bloße Information)."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Galerie-/Gedenkseite für Hundeporträts mit Applookups auf Hund, Besitzer und Buchung. Reine Inhalts-Sammlung, keine berechenbaren Felder. Erstellungsdatum defaultet auf heute."
+    }
+  }
+}

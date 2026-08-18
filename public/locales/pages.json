@@ -1,0 +1,41 @@
+{
+  "pages": {
+    "en": {
+      "Abreise": "Departure",
+      "Abreise heute": "Departing Today",
+      "Anfrage": "Request",
+      "Anfrage abgelehnt": "Request Declined",
+      "Anfrage bestätigen": "Confirm Request",
+      "Anfrage bestätigt": "Request Confirmed",
+      "Anfrage manuell erfassen": "Enter Request Manually",
+      "Anreise": "Arrival",
+      "Anreise heute": "Arriving Today",
+      "Anwesend": "Present",
+      "Aufenthalt angepasst": "Stay Adjusted",
+      "Buchung verschoben": "Booking Rescheduled",
+      "Check-in bestätigen": "Confirm Check-in",
+      "Check-in bestätigt": "Check-in Confirmed",
+      "Check-out durchführen": "Perform Check-out",
+      "Check-out durchgeführt": "Check-out Completed",
+      "Freie Plätze": "Available Spots",
+      "Heute keine An- oder Abreisen — alles ruhig!": "No arrivals or departures today — all quiet!",
+      "Heute sind keine An- oder Abreisen geplant.": "No arrivals or departures scheduled today.",
+      "Heute — An- & Abreisen": "Today — Arrivals & Departures",
+      "Hund": "Dog",
+      "Keine neuen Buchungsanfragen.": "No new booking requests.",
+      "Neue Buchung": "New Booking",
+      "Neue Buchungsanfragen": "New Booking Requests",
+      "Offene Anfragen": "Open Requests",
+      "Offene Anfragen (gefiltert)": "Open Requests (filtered)",
+      "kommen heute an — Check-in ausstehend.": "arrive today — check-in pending.",
+      "kommt heute an — Check-in ausstehend.": "arrives today — check-in pending.",
+      "reisen heute ab": "depart today",
+      "reisen heute an": "arrive today",
+      "reist heute ab": "departs today",
+      "reist heute an": "arrives today",
+      "{0} Hunde sind gerade bei uns.": "{0} dogs are currently with us.",
+      "✓ Bestätigen": "✓ Confirm"
+    }
+  },
+  "v": 1
+}
