@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Kontaktdaten-Stammdaten, nichts berechenbar. Keine Datumslogik, keine applookup mit numerischen Targets, keine Preis-Felder."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Tier-Stammdaten mit Eigenschaften (Rasse, Gewicht, Impfstatus). Ein applookup (Besitzer) ohne numerische Target-Felder. Keine berechenbaren Beziehungen."
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["status", "anreise", "abreise", "zahlungsstatus"],
+      "computed_keys": ["_buchung_dauer_nächte"],
+      "reason": "Aufenthalts-Entity (Datumspaar anreise/abreise, status-Lookup, Zahlungsstatus). Virtueller Dauer-Key für Aggregat-Anzeige im Dialog: dateDiff(anreise, abreise, days). Defaults: status=geplant, anreise=heute, abreise=heute+3 Tage, zahlungsstatus=offen."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anfrage_status", "wunsch_anreise", "wunsch_abreise"],
+      "computed_keys": [],
+      "reason": "Lead-Entity für Pre-Buchungen. Keine numerischen Felder außer implizit im Datumspaar (Größe-Lookup ohne numerische Targets). Defaults: anfrage_status=offen, Datum-Pair mit 3-Tage-Default."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Portfolio-Entity mit Bezügen (Hund, Besitzer, Buchung via applookup ohne numerische Targets) + Texte + Datum. Default: erstellungsdatum=heute. Keine berechenbaren Beziehungen."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "CMS/Firmenseite-Stammdaten. Anzahl_plaetze numerisch aber nicht berechenbar (nur Firmen-Kennzahl). Leistungen und Öffnungszeiten als Textareas mit Formatierungs-Hinweis (eine pro Zeile). Keine computed nötig."
+    }
+  }
+}
