@@ -44,13 +44,6 @@ const INITIAL: FormData = {
 
 // ---- Step metadata --------------------------------------------------------
 
-const STEPS: { icon: React.ReactNode; label: () => string }[] = [
-  { icon: <IconUser size={18} />, label: () => tx('Kontaktdaten') },
-  { icon: <IconDog size={18} />, label: () => tx('Hund') },
-  { icon: <IconCalendar size={18} />, label: () => tx('Zeitraum') },
-  { icon: <IconMessageCircle size={18} />, label: () => tx('Nachricht') },
-];
-
 // ---- Helpers ---------------------------------------------------------------
 
 function FieldLabel({ children, required }: { children: React.ReactNode; required?: boolean }) {
@@ -138,9 +131,16 @@ function RadioGroup({
 // ---- Stepper indicator ----------------------------------------------------
 
 function StepIndicator({ current }: { current: Step }) {
+  const STEPS: { icon: React.ReactNode; label: () => string }[] = [
+  { icon: <IconUser size={18} />, label: () => tx('Kontaktdaten') },
+  { icon: <IconDog size={18} />, label: () => tx('Hund') },
+  { icon: <IconCalendar size={18} />, label: () => tx('Zeitraum') },
+  { icon: <IconMessageCircle size={18} />, label: () => tx('Nachricht') },
+];
+
   return (
     <div className="flex items-center justify-center gap-1 mb-6">
-      {STEPS.map((s, i) => {
+      {STEPS.map((_s, i) => {
         const n = (i + 1) as Step;
         const done = n < current;
         const active = n === current;

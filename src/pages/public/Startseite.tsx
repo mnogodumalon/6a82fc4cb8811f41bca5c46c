@@ -68,7 +68,7 @@ export default function Startseite() {
               appId: ep.app_id,
               limit: 1,
             });
-            const records = Object.values(result ?? {}) as WebsiteRecord[];
+            const records = Object.values(result ?? {}) as unknown as WebsiteRecord[];
             if (records.length > 0) setWebsite(records[0]);
           }
         }
@@ -387,7 +387,7 @@ export default function Startseite() {
                       className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition-colors"
                     >
                       <IconBrandInstagram size={22} className="shrink-0" />
-                      <span className="text-sm">Instagram</span>
+                      <span className="text-sm">{tx('Instagram')}</span>
                     </a>
                   )}
                   {w?.facebook && (
@@ -398,7 +398,7 @@ export default function Startseite() {
                       className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition-colors"
                     >
                       <IconBrandFacebook size={22} className="shrink-0" />
-                      <span className="text-sm">Facebook</span>
+                      <span className="text-sm">{tx('Facebook')}</span>
                     </a>
                   )}
                 </div>
@@ -444,8 +444,8 @@ export default function Startseite() {
       {/* ── FOOTER ───────────────────────────────────────────────── */}
       <footer className="bg-gray-950 text-gray-500 text-center py-6 text-sm">
         <p>
-          &copy; {new Date().getFullYear()} {name}
-          {adresse && <> &middot; {adresse}</>}
+          {tx('&copy;')} {new Date().getFullYear()} {name}
+          {adresse && <> {tx('&middot;')} {adresse}</>}
         </p>
       </footer>
     </PublicShell>
