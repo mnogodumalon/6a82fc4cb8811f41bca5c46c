@@ -1,0 +1,12 @@
+{
+  "pages": [
+    {
+      "file": "src/pages/public/Startseite.tsx",
+      "component": "Startseite",
+      "slug": "hundepension",
+      "ok": true,
+      "blocked": false,
+      "error": null
+    }
+  ]
+}

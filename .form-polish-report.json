@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Kontakt, Adresse) — nichts berechenbar, keine Preise, keine Datenpaare"
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": ["impfstatus", "kastriert"],
+      "computed_keys": [],
+      "reason": "Tier-Stammdaten mit Status-Feldern — nur Gewicht (nicht berechenbar ohne Preis-Kontext), applookup auf Besitzer hat kein Preis-Zielfeld"
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anreise", "abreise", "status", "zahlungsstatus"],
+      "computed_keys": ["_buchung_dauer_nächte"],
+      "reason": "Aufenthalts-Entity mit Datumspaar (anreise/abreise) — virtuelle Dauer-Berechnung für Dialog-Aggregat. Preis ohne explizites Preis-Lookup-Target bleibt manuell."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": ["wunsch_anreise", "wunsch_abreise", "anfrage_status"],
+      "computed_keys": ["_anfrage_dauer_nächte"],
+      "reason": "Pipeline-Entity für Anfragen mit gewünschtem Datumspaar — virtuelle Dauer-Anzeige. Kein Preisfeld, daher keine Money-Computed."
+    },
+    "Website": {
+      "placeholders_set": 15,
+      "defaults_keys": ["anzahl_plaetze"],
+      "computed_keys": [],
+      "reason": "App-Konfiguration (Texte, Kapazität, Kontakt) — keine numerischen Beziehungen, keine Preise, keine Datenpaare"
+    },
+    "PfotenPortraets": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Content-Management (Textgalerie, Narratives) — applookups auf Hund/Besitzer/Buchung ohne Preis-Targets. Rein redaktionell."
+    }
+  }
+}
