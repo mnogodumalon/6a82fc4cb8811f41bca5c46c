@@ -1,0 +1,20 @@
+{
+  "pages": [
+    {
+      "file": "src/pages/public/Hundepension.tsx",
+      "component": "Hundepension",
+      "slug": "hundepension",
+      "ok": true,
+      "blocked": false,
+      "error": null
+    },
+    {
+      "file": "src/pages/public/Buchungsanfrage.tsx",
+      "component": "Buchungsanfrage",
+      "slug": "buchungsanfrage",
+      "ok": true,
+      "blocked": false,
+      "error": null
+    }
+  ]
+}

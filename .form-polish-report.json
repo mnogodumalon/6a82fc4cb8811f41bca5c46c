@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Kontakt- und Adressinformationen), keine Number- oder Lookup-Preisfelder — nichts berechenbar"
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Tierprofil-Stammdaten mit Geburtsdatum und Gewicht; kein Preis-Applookup oder Mengenfeld — keine Berechnungen nötig"
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["status", "zahlungsstatus"],
+      "computed_keys": ["_buchung_aufenthalt_nächte"],
+      "reason": "Aufenthalts-Entity mit Anreise/Abreise; keine Preis-Applookup vorhanden (kein Zimmer-Entity mit Tagespreis) — nur virtuelle Dauer-Berechnung für Aggregat-Übersicht"
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": ["anfrage_status"],
+      "computed_keys": [],
+      "reason": "Anfrage-Erfassung mit Kontakt- und Hundedaten; kein Number- oder Preis-Feld, keine Applookups auf echte Hund-Records — reine Formular-Daten"
+    },
+    "Website": {
+      "placeholders_set": 15,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Unternehmens-Stammdaten mit Kontakt-, Adress- und Social-Media-Feldern; nur ein Number-Feld (Kapazität) ohne Bezug zu anderen Feldern — keine Berechnungen"
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Inhalts-Verwaltung mit Applookups zu bestehenden Records; keine Mengen- oder Preisfelder, nur Textfelder und Referenzen — keine Berechnungen"
+    }
+  }
+}
