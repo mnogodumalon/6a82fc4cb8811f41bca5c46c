@@ -15,12 +15,6 @@ import { IconPaw, IconUser, IconCalendar, IconCheck, IconAlertCircle } from '@ta
 const SLUG = 'buchungsanfrage';
 
 // Lookup-Optionen für hund_groesse (statisch — vom Schema)
-const HUND_GROESSE_OPTIONS = [
-  { key: 'klein', label: tx('Klein (bis 10 kg)') },
-  { key: 'mittel', label: tx('Mittel (10–25 kg)') },
-  { key: 'gross', label: tx('Groß (über 25 kg)') },
-];
-
 interface FormState {
   anfrage_vorname: string;
   anfrage_nachname: string;
@@ -48,6 +42,12 @@ const EMPTY_FORM: FormState = {
 };
 
 export default function Buchungsanfrage() {
+  const HUND_GROESSE_OPTIONS = [
+  { key: 'klein', label: tx('Klein (bis 10 kg)') },
+  { key: 'mittel', label: tx('Mittel (10–25 kg)') },
+  { key: 'gross', label: tx('Groß (über 25 kg)') },
+];
+
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);

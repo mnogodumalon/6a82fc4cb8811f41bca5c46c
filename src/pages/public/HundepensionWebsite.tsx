@@ -54,7 +54,7 @@ export default function HundepensionWebsite() {
           const ep = p.endpoints?.find((e) => e.op === 'list' && e.entity === 'website');
           if (ep) {
             const result = await listPublicRecords(c, p, { appId: ep.app_id, limit: 1 });
-            const records = Object.values(result) as WebsiteRecord[];
+            const records = Object.values(result) as unknown as WebsiteRecord[];
             if (records.length > 0) setSite(records[0]);
           }
         } catch {
@@ -299,7 +299,7 @@ export default function HundepensionWebsite() {
                         <circle cx="12" cy="12" r="4" />
                         <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                       </svg>
-                      Instagram
+                      {tx('Instagram')}
                     </a>
                   )}
                   {f.facebook && (
@@ -312,7 +312,7 @@ export default function HundepensionWebsite() {
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                       </svg>
-                      Facebook
+                      {tx('Facebook')}
                     </a>
                   )}
                 </div>
