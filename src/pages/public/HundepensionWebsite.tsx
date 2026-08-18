@@ -62,7 +62,7 @@ export default function HundepensionWebsite() {
           const ep = p.endpoints?.find(e => e.op === 'list');
           if (ep) {
             const records = await listPublicRecords(c, p, { appId: ep.app_id, limit: 1 });
-            const first = records[0] as WebsiteRecord | undefined;
+            const first = records[0] as unknown as WebsiteRecord | undefined;
             setWebsite(first ?? null);
           }
         } catch {

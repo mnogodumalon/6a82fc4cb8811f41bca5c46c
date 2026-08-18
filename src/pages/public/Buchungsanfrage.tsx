@@ -35,17 +35,11 @@ const EMPTY: FormData = {
   anfrage_email: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  hund_groesse: 'klein',
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',
 };
-
-const GROESSE_OPTIONS: { key: string; label: string }[] = [
-  { key: 'klein', label: 'Klein (bis 10 kg)' },
-  { key: 'mittel', label: 'Mittel (10–25 kg)' },
-  { key: 'gross', label: 'Groß (über 25 kg)' },
-];
 
 function FieldError({ msg }: { msg?: string }) {
   if (!msg) return null;
@@ -53,6 +47,12 @@ function FieldError({ msg }: { msg?: string }) {
 }
 
 export default function Buchungsanfrage() {
+  const GROESSE_OPTIONS: { key: string; label: string }[] = [
+  { key: 'klein', label: tx('Klein (bis 10 kg)') },
+  { key: 'mittel', label: tx('Mittel (10–25 kg)') },
+  { key: 'gross', label: tx('Groß (über 25 kg)') },
+];
+
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
