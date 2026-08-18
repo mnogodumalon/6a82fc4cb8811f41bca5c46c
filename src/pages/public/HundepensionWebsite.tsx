@@ -48,7 +48,7 @@ interface FormState {
   anfrage_telefon: string;
   hund_name: string;
   hund_rasse: string;
-  hund_groesse: string;
+  groesse_auswahl: 'gross' | 'klein' | 'mittel' | ''; /* i18n-exempt */
   wunsch_anreise: string;
   wunsch_abreise: string;
   nachricht: string;
@@ -87,7 +87,7 @@ export default function HundepensionWebsite() {
     anfrage_telefon: '',
     hund_name: '',
     hund_rasse: '',
-    hund_groesse: '',
+    groesse_auswahl: '',
     wunsch_anreise: '',
     wunsch_abreise: '',
     nachricht: '',
@@ -110,9 +110,11 @@ export default function HundepensionWebsite() {
         try {
           const websiteEp = p.endpoints?.find(e => e.op === 'list' && e.entity === 'website');
           if (websiteEp) {
-            const records = await listPublicRecords(c, p, { appId: websiteEp.app_id, limit: 1 });
-            const first = records[0] as WebsiteRecord | undefined;
-            if (first) setWebsite(first);
+            const recordsMap = await listPublicRecords(c, p, { appId: websiteEp.app_id, limit: 1 });
+            const [firstId, firstEntry] = Object.entries(recordsMap)[0] ?? [];
+            if (firstId && firstEntry) {
+              setWebsite({ record_id: firstId, fields: firstEntry.fields as WebsiteRecord['fields'] });
+            }
           }
         } catch {
           // no website record — page still shows fallback design
@@ -127,9 +129,8 @@ export default function HundepensionWebsite() {
     if (challengeReady || !cfg || !page) return;
     const createEp = page.endpoints?.find(e => e.op === 'create' && e.entity === 'buchungsanfragen');
     if (createEp) {
-      prepareChallenge(cfg, page, 'POST', `/apps/${createEp.app_id}/records`).then(() =>
-        setChallengeReady(true)
-      );
+      prepareChallenge(cfg, page, 'POST', `/apps/${createEp.app_id}/records`);
+      setChallengeReady(true);
     }
   };
 
@@ -172,7 +173,7 @@ export default function HundepensionWebsite() {
       };
       if (form.anfrage_telefon) payload.anfrage_telefon = form.anfrage_telefon;
       if (form.hund_rasse) payload.hund_rasse = form.hund_rasse;
-      if (form.hund_groesse) payload.hund_groesse = form.hund_groesse;
+      if (form.groesse_auswahl) payload.hund_groesse = form.groesse_auswahl;
       if (form.nachricht) payload.nachricht = form.nachricht;
 
       await createPublicRecord(cfg, page, payload);
@@ -364,7 +365,7 @@ export default function HundepensionWebsite() {
                     className="flex items-center gap-2 text-sm text-pink-600 hover:underline"
                   >
                     <IconBrandInstagram size={20} />
-                    Instagram
+                    {tx('Instagram')}
                   </a>
                 )}
                 {w.facebook && (
@@ -375,7 +376,7 @@ export default function HundepensionWebsite() {
                     className="flex items-center gap-2 text-sm text-blue-600 hover:underline"
                   >
                     <IconBrandFacebook size={20} />
-                    Facebook
+                    {tx('Facebook')}
                   </a>
                 )}
               </div>
@@ -531,17 +532,17 @@ export default function HundepensionWebsite() {
                         <label
                           key={opt.key}
                           className={`flex items-center gap-2 px-4 py-2 rounded-full border cursor-pointer text-sm transition-colors ${
-                            form.hund_groesse === opt.key
+                            form.groesse_auswahl === opt.key
                               ? 'border-amber-500 bg-amber-50 text-amber-800'
                               : 'border-input hover:border-amber-300'
                           }`}
                         >
                           <input
                             type="radio"
-                            name="hund_groesse"
+                            name="groesse_auswahl"
                             value={opt.key}
-                            checked={form.hund_groesse === opt.key}
-                            onChange={e => setForm(f => ({ ...f, hund_groesse: e.target.value }))}
+                            checked={form.groesse_auswahl === opt.key}
+                            onChange={e => setForm(f => ({ ...f, groesse_auswahl: e.target.value as FormState['groesse_auswahl'] }))}
                             className="sr-only"
                           />
                           {opt.label}

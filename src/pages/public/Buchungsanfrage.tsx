@@ -21,7 +21,7 @@ type FormState = {
   anfrage_telefon: string;
   hund_name: string;
   hund_rasse: string;
-  hund_groesse: string;
+  groesse_auswahl: 'gross' | 'klein' | 'mittel' | ''; /* i18n-exempt */
   wunsch_anreise: string;
   wunsch_abreise: string;
   nachricht: string;
@@ -34,7 +34,7 @@ const INITIAL: FormState = {
   anfrage_telefon: '',
   hund_name: '',
   hund_rasse: '',
-  hund_groesse: '',
+  groesse_auswahl: '',
   wunsch_anreise: '',
   wunsch_abreise: '',
   nachricht: '',
@@ -73,7 +73,7 @@ export default function Buchungsanfrage() {
     const ep = page.endpoints?.find(e => e.op === 'create');
     if (!ep) return;
     challengeRef.current = true;
-    prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`).catch(() => {});
+    prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`);
   };
 
   const setField = (key: keyof FormState, value: string) => {
@@ -126,7 +126,7 @@ export default function Buchungsanfrage() {
       };
       if (form.anfrage_telefon.trim()) payload.anfrage_telefon = form.anfrage_telefon.trim();
       if (form.hund_rasse.trim()) payload.hund_rasse = form.hund_rasse.trim();
-      if (form.hund_groesse) payload.hund_groesse = form.hund_groesse;
+      if (form.groesse_auswahl) payload.hund_groesse = form.groesse_auswahl;
       if (form.nachricht.trim()) payload.nachricht = form.nachricht.trim();
 
       await createPublicRecord(cfg, page, payload);
@@ -199,7 +199,7 @@ export default function Buchungsanfrage() {
                   value={form.anfrage_vorname}
                   onChange={e => setField('anfrage_vorname', e.target.value)}
                   className={`w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 transition ${errors.anfrage_vorname ? 'border-destructive' : 'border-input'}`}
-                  placeholder="Max"
+                  placeholder={tx('Max')}
                 />
                 {errors.anfrage_vorname && (
                   <p className="text-xs text-destructive flex items-center gap-1">
@@ -218,7 +218,7 @@ export default function Buchungsanfrage() {
                   value={form.anfrage_nachname}
                   onChange={e => setField('anfrage_nachname', e.target.value)}
                   className={`w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 transition ${errors.anfrage_nachname ? 'border-destructive' : 'border-input'}`}
-                  placeholder="Mustermann"
+                  placeholder={tx('Mustermann')}
                 />
                 {errors.anfrage_nachname && (
                   <p className="text-xs text-destructive flex items-center gap-1">
@@ -238,7 +238,7 @@ export default function Buchungsanfrage() {
                 value={form.anfrage_email}
                 onChange={e => setField('anfrage_email', e.target.value)}
                 className={`w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 transition ${errors.anfrage_email ? 'border-destructive' : 'border-input'}`}
-                placeholder="max@beispiel.de"
+                placeholder={tx('max@beispiel.de')}
               />
               {errors.anfrage_email && (
                 <p className="text-xs text-destructive flex items-center gap-1">
@@ -276,7 +276,7 @@ export default function Buchungsanfrage() {
                   value={form.hund_name}
                   onChange={e => setField('hund_name', e.target.value)}
                   className={`w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 transition ${errors.hund_name ? 'border-destructive' : 'border-input'}`}
-                  placeholder="Bello"
+                  placeholder={tx('Bello')}
                 />
                 {errors.hund_name && (
                   <p className="text-xs text-destructive flex items-center gap-1">
@@ -294,7 +294,7 @@ export default function Buchungsanfrage() {
                   value={form.hund_rasse}
                   onChange={e => setField('hund_rasse', e.target.value)}
                   className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 transition"
-                  placeholder="Labrador"
+                  placeholder={tx('Labrador')}
                 />
               </div>
             </div>
@@ -313,9 +313,9 @@ export default function Buchungsanfrage() {
                   <button
                     key={opt.key}
                     type="button"
-                    onClick={() => setField('hund_groesse', form.hund_groesse === opt.key ? '' : opt.key)}
+                    onClick={() => setField('groesse_auswahl', form.groesse_auswahl === opt.key ? '' : opt.key)}
                     className={`rounded-lg border-2 px-3 py-3 text-center transition focus:outline-none focus:ring-2 focus:ring-primary/50 ${
-                      form.hund_groesse === opt.key
+                      form.groesse_auswahl === opt.key
                         ? 'border-primary bg-primary/10 text-primary'
                         : 'border-input bg-background text-foreground hover:border-primary/40'
                     }`}
