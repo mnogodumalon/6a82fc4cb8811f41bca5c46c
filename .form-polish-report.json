@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Personalien, Kontakt, Adresse), nichts berechenbar. Keine applookup-Ketten, keine Numerik, keine Date-Paare mit Preis-Multiplikation."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Tierstamm mit Kontextdaten (Gewicht, Impfstatus, Fütterung, Tierarzt, Besitzer). Ein applookup auf Besitzer ohne Preis-Target, keine Berechnung sinnvoll."
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anreise", "abreise", "status", "zahlungsstatus"],
+      "computed_keys": ["_buchung_nächte"],
+      "reason": "Aufenthalts-Entity (Datumpaar anreise/abreise + Preis). Virtuelle Dauer-Berechnung (_buchung_nächte) für Dialog-Aggregat. Preis_gesamt bleibt manuell, da kein applookup auf Preis-Target vorhanden ist."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["wunsch_anreise", "wunsch_abreise", "anfrage_status"],
+      "computed_keys": ["_anfrage_nächte"],
+      "reason": "Lead-Erfassung mit Anfrage-Datumpaar (wunsch_anreise/abreise). Virtuelle Dauer-Berechnung (_anfrage_nächte) für Dialog-Übersicht. Keine Preisfelder, keine applookup-Numerik."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Marketing-Konfiguration (Texte, URLs, Öffnungszeiten, Soziale Medien, Unternehmensinfo). Ein Inventarfeld (anzahl_plaetze) ohne Berechnung. Keine Formeln sinnvoll."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Content-Sammlung (Portraits pro Buchung mit Widmung, Erlebnisse, Notizen). Three applookups ohne Preis-Targets, keine Numerik. Erstellungsdatum erhält Today-Default."
+    }
+  }
+}
