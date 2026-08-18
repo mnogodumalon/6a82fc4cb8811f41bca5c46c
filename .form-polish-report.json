@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Besitzer": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Kontakt-Stammdaten (Vorname, Nachname, Telefon, E-Mail, Adresse). Keine berechenbaren Felder — weder Number-Produkte noch Datumsdifferenzen noch applookup-Ketten."
+    },
+    "Hunde": {
+      "placeholders_set": 12,
+      "defaults_keys": ["kastriert", "impfstatus"],
+      "computed_keys": [],
+      "reason": "Tier-Stammdatensatz mit Gewicht (nicht berechenbar pro Tier — variiert biologisch) und Lookups für Status. Keine Datums-Paare, keine Preise, keine computed-Formeln sinnvoll."
+    },
+    "Buchungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anreise", "abreise", "status", "zahlungsstatus"],
+      "computed_keys": ["_buchung_aufenthalts_nächte", "preis_gesamt"],
+      "reason": "Aufenthalts-Entity (Buchung) mit Datumspaar (anreise/abreise → Nächte-Berechnung) und Gesamtpreis-Feld. Dauer berechnet als dateDiff. Preis berechnet als Nächte × 50€/Nacht Pauschale (User überschreibt manuell; kein separates applookup-Preis vorhanden auf Hunde-Target)."
+    },
+    "Buchungsanfragen": {
+      "placeholders_set": 11,
+      "defaults_keys": ["wunsch_anreise", "wunsch_abreise", "anfrage_status"],
+      "computed_keys": [],
+      "reason": "Lead-Erfassungs-Entity für Anfragen (Kontaktdaten + Tierwunsch + Zeitwunsch + Status). Keine berechenbaren Felder — reine Texterfassung und Status-Tracking."
+    },
+    "Website": {
+      "placeholders_set": 14,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Website-Stammdaten und CMS-Content (Unternehmensinfo, Öffnungszeiten, Kontakt, Social-Links, Plätze-Anzahl). Anzahl-Plätze ist ein reine Konfiguration; keine abhängigen Berechnungen. Keine computed-Formeln sinnvoll."
+    },
+    "Pfoten-Porträts": {
+      "placeholders_set": 7,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Content-Management für Tiergalerien mit Geschichten. Applookups zu Hund, Besitzer, Buchung dienen der Kontextualisierung; keine Preis-, Mengen- oder Zeitberechnungen. Rein redaktionell."
+    }
+  }
+}

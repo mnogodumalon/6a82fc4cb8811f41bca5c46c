@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "startseite",
+      "type": "custom",
+      "entity": "website",
+      "title": "Hundepension — Willkommen",
+      "published": false,
+      "fields": []
+    },
+    {
+      "slug": "buchungsanfrage",
+      "type": "custom",
+      "entity": "buchungsanfragen",
+      "title": "Buchungsanfrage",
+      "published": false,
+      "fields": [
+        "anfrage_vorname",
+        "anfrage_nachname",
+        "anfrage_telefon",
+        "anfrage_email",
+        "hund_name",
+        "hund_rasse",
+        "hund_groesse",
+        "wunsch_anreise",
+        "wunsch_abreise",
+        "nachricht"
+      ]
+    }
+  ]
+}

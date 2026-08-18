@@ -1,0 +1,34 @@
+{
+  "pages": {
+    "en": {
+      " ab {0}": " from {0}",
+      "Abreise": "Departure",
+      "Abreisen heute": "Departures Today",
+      "Aktuell {0} vor Ort.": "Currently {0} on site.",
+      "Anreise": "Arrival",
+      "Anreisen heute": "Arrivals Today",
+      "Belegt": "Occupied",
+      "Bestätigen": "Confirm",
+      "Buchungsanfragen": "Booking Requests",
+      "Dieser Platz ist im gewählten Zeitraum bereits belegt.": "This spot is already occupied during the selected period.",
+      "Eine neue Buchungsanfrage": "One new booking request",
+      "Freie Plätze": "Available Spots",
+      "Heute reist niemand an oder ab.": "Nobody arriving or departing today.",
+      "Heute: An- & Abreisen": "Today: Arrivals & Departures",
+      "Hund unbekannt": "Dog Unknown",
+      "Jetzt bestätigen": "Confirm Now",
+      "Keine offenen Anfragen — alles bearbeitet.": "No open requests — all handled.",
+      "Neue Buchung": "New Booking",
+      "Noch keine Hunde aktuell eingecheckt.": "No dogs currently checked in.",
+      "Offene Anfragen": "Open Requests",
+      "Unbekannt": "Unknown",
+      "Unbekannte Anfrage": "Unknown Request",
+      "{0} neue Buchungsanfragen": "{0} new booking requests",
+      "{0} — abgelehnt": "{0} — declined",
+      "{0} — ausgecheckt": "{0} — checked out",
+      "{0} — bestätigt": "{0} — confirmed",
+      "{0} — eingecheckt": "{0} — checked in"
+    }
+  },
+  "v": 1
+}
