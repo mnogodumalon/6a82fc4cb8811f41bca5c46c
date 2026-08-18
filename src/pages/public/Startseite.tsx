@@ -109,7 +109,7 @@ export default function Startseite() {
 
         const websiteEp = p.endpoints?.find((e) => e.op === 'list' && e.app_id);
         if (websiteEp) {
-          const result = await listPublicRecords(c, p, { appId: websiteEp.app_id, limit: 1 });
+          const result = await listPublicRecords(c!, p, { appId: websiteEp.app_id, limit: 1 });
           const entries = Object.values(result) as WebsiteRecord[];
           if (entries.length > 0) setWebsite(entries[0]);
         }
@@ -140,7 +140,7 @@ export default function Startseite() {
   function prepareIfNeeded() {
     if (!challengePrepared.current && createEp) {
       challengePrepared.current = true;
-      prepareChallenge(cfg, page, 'POST', `/apps/${createEp.app_id}/records`);
+      prepareChallenge(cfg!, page!, 'POST', `/apps/${createEp.app_id}/records`);
     }
   }
 
@@ -198,7 +198,7 @@ export default function Startseite() {
       if (form.hund_groesse) payload.hund_groesse = form.hund_groesse;
       if (form.nachricht.trim()) payload.nachricht = form.nachricht.trim();
 
-      await createPublicRecord(cfg, page, payload);
+      await createPublicRecord(cfg!, page!, payload);
       setSubmitted(true);
     } catch {
       setSubmitError(tx('Es ist ein Fehler aufgetreten. Bitte versuche es erneut.'));
@@ -395,7 +395,7 @@ export default function Startseite() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-white transition-colors text-sm font-medium"
               >
-                <IconBrandInstagram size={18} className="shrink-0" /> Instagram
+                <IconBrandInstagram size={18} className="shrink-0" /> {tx('Instagram')}
               </a>
             )}
             {ws.facebook && (
@@ -405,7 +405,7 @@ export default function Startseite() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-white transition-colors text-sm font-medium"
               >
-                <IconBrandFacebook size={18} className="shrink-0" /> Facebook
+                <IconBrandFacebook size={18} className="shrink-0" /> {tx('Facebook')}
               </a>
             )}
           </div>
