@@ -311,7 +311,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="anfrage_vorname">{fieldLabel('buchungsanfragen', 'anfrage_vorname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="anfrage_vorname"
-          placeholder="z. B. Anna"
+          placeholder=""
           value={fields.anfrage_vorname ?? ''}
           onChange={e => setFields(f => ({ ...f, anfrage_vorname: e.target.value }))}
           required
@@ -326,7 +326,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="anfrage_nachname">{fieldLabel('buchungsanfragen', 'anfrage_nachname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="anfrage_nachname"
-          placeholder="z. B. Schmidt"
+          placeholder=""
           value={fields.anfrage_nachname ?? ''}
           onChange={e => setFields(f => ({ ...f, anfrage_nachname: e.target.value }))}
           required
@@ -352,7 +352,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Input
           id="anfrage_email"
           type="email"
-          placeholder="z. B. anna@example.com"
+          placeholder=""
           value={fields.anfrage_email ?? ''}
           onChange={e => setFields(f => ({ ...f, anfrage_email: e.target.value }))}
         />
@@ -366,7 +366,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="hund_name">{fieldLabel('buchungsanfragen', 'hund_name')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="hund_name"
-          placeholder="z. B. Rocky"
+          placeholder=""
           value={fields.hund_name ?? ''}
           onChange={e => setFields(f => ({ ...f, hund_name: e.target.value }))}
           required
@@ -381,7 +381,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="hund_rasse">{fieldLabel('buchungsanfragen', 'hund_rasse')}</Label>
         <Input
           id="hund_rasse"
-          placeholder="z. B. Labrador"
+          placeholder=""
           value={fields.hund_rasse ?? ''}
           onChange={e => setFields(f => ({ ...f, hund_rasse: e.target.value }))}
         />
@@ -438,7 +438,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="wunsch_anreise">{fieldLabel('buchungsanfragen', 'wunsch_anreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="wunsch_anreise"
-          placeholder="Ab wann?"
+          placeholder=""
           mode="date"
           value={fields.wunsch_anreise ?? null}
           onChange={v => setFields(f => ({ ...f, wunsch_anreise: v ?? undefined }))}
@@ -454,7 +454,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="wunsch_abreise">{fieldLabel('buchungsanfragen', 'wunsch_abreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="wunsch_abreise"
-          placeholder="Bis wann?"
+          placeholder=""
           mode="date"
           value={fields.wunsch_abreise ?? null}
           onChange={v => setFields(f => ({ ...f, wunsch_abreise: v ?? undefined }))}
@@ -470,7 +470,7 @@ export function BuchungsanfragenDialog({ open, onClose, onSubmit, defaultValues,
         <Label htmlFor="nachricht">{fieldLabel('buchungsanfragen', 'nachricht')}</Label>
         <Textarea
           id="nachricht"
-          placeholder="Besondere Wünsche, medizinische Besonderheiten..."
+          placeholder=""
           value={fields.nachricht ?? ''}
           onChange={e => setFields(f => ({ ...f, nachricht: e.target.value }))}
           rows={3}

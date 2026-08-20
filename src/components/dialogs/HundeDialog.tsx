@@ -360,7 +360,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="name">{fieldLabel('hunde', 'name')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="name"
-          placeholder="z. B. Bella"
+          placeholder=""
           value={fields.name ?? ''}
           onChange={e => setFields(f => ({ ...f, name: e.target.value }))}
           required
@@ -375,7 +375,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="rasse">{fieldLabel('hunde', 'rasse')}</Label>
         <Input
           id="rasse"
-          placeholder="z. B. Schäferhund"
+          placeholder=""
           value={fields.rasse ?? ''}
           onChange={e => setFields(f => ({ ...f, rasse: e.target.value }))}
         />
@@ -386,7 +386,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="geburtsdatum">{fieldLabel('hunde', 'geburtsdatum')}</Label>
         <DatePicker
           id="geburtsdatum"
-          placeholder="Geburtsdatum eingeben"
+          placeholder=""
           mode="date"
           value={fields.geburtsdatum ?? null}
           onChange={v => setFields(f => ({ ...f, geburtsdatum: v ?? undefined }))}
@@ -447,7 +447,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
           type="number"
           step="any"
           {...numberInputProps(formEnhancements, 'gewicht_kg')}
-          placeholder="z. B. 25"
+          placeholder=""
           value={fields.gewicht_kg !== undefined ? fields.gewicht_kg : (computedValues['gewicht_kg'] ?? '')}
           onChange={e => setFields(f => ({ ...f, gewicht_kg: clampNumberValue(formEnhancements, 'gewicht_kg', e.target.value) }))}
         />
@@ -600,7 +600,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="fuetterungshinweise">{fieldLabel('hunde', 'fuetterungshinweise')}</Label>
         <Textarea
           id="fuetterungshinweise"
-          placeholder="Fütterungsplan, Allergien, Besonderheiten..."
+          placeholder=""
           value={fields.fuetterungshinweise ?? ''}
           onChange={e => setFields(f => ({ ...f, fuetterungshinweise: e.target.value }))}
           rows={3}
@@ -612,7 +612,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="medikamente">{fieldLabel('hunde', 'medikamente')}</Label>
         <Textarea
           id="medikamente"
-          placeholder="Regelmäßige Medikamente, Chronische Erkrankungen..."
+          placeholder=""
           value={fields.medikamente ?? ''}
           onChange={e => setFields(f => ({ ...f, medikamente: e.target.value }))}
           rows={3}
@@ -624,7 +624,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="tierarzt_name">{fieldLabel('hunde', 'tierarzt_name')}</Label>
         <Input
           id="tierarzt_name"
-          placeholder="z. B. Dr. Schmidt, Tierarztpraxis ..."
+          placeholder=""
           value={fields.tierarzt_name ?? ''}
           onChange={e => setFields(f => ({ ...f, tierarzt_name: e.target.value }))}
         />
@@ -645,7 +645,7 @@ export function HundeDialog({ open, onClose, onSubmit, defaultValues, recordId, 
         <Label htmlFor="besitzer">{fieldLabel('hunde', 'besitzer')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="besitzer"
-          placeholder="Besitzer wählen"
+          placeholder=""
           items={besitzerListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.vorname ?? r.record_id),

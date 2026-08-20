@@ -392,7 +392,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="unternehmensname">{fieldLabel('website', 'unternehmensname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="unternehmensname"
-          placeholder="z. B. Pfotenpension am See"
+          placeholder=""
           value={fields.unternehmensname ?? ''}
           onChange={e => setFields(f => ({ ...f, unternehmensname: e.target.value }))}
           required
@@ -407,7 +407,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="slogan">{fieldLabel('website', 'slogan')}</Label>
         <Input
           id="slogan"
-          placeholder="z. B. Heimat für Ihre liebsten Vierbeiner"
+          placeholder=""
           value={fields.slogan ?? ''}
           onChange={e => setFields(f => ({ ...f, slogan: e.target.value }))}
         />
@@ -418,7 +418,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="beschreibung">{fieldLabel('website', 'beschreibung')}</Label>
         <Textarea
           id="beschreibung"
-          placeholder="Über die Pension, Besonderheiten, Geschichte..."
+          placeholder=""
           value={fields.beschreibung ?? ''}
           onChange={e => setFields(f => ({ ...f, beschreibung: e.target.value }))}
           rows={3}
@@ -430,7 +430,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="leistungen">{fieldLabel('website', 'leistungen')}</Label>
         <Textarea
           id="leistungen"
-          placeholder="Eine Leistung pro Zeile"
+          placeholder=""
           value={fields.leistungen ?? ''}
           onChange={e => setFields(f => ({ ...f, leistungen: e.target.value }))}
           rows={3}
@@ -445,7 +445,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
           type="number"
           step="any"
           {...numberInputProps(formEnhancements, 'anzahl_plaetze')}
-          placeholder="z. B. 8"
+          placeholder=""
           value={fields.anzahl_plaetze !== undefined ? fields.anzahl_plaetze : (computedValues['anzahl_plaetze'] ?? '')}
           onChange={e => setFields(f => ({ ...f, anzahl_plaetze: clampNumberValue(formEnhancements, 'anzahl_plaetze', e.target.value) }))}
         />
@@ -456,7 +456,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="oeffnungszeiten">{fieldLabel('website', 'oeffnungszeiten')}</Label>
         <Textarea
           id="oeffnungszeiten"
-          placeholder="Eine Zeile pro Tag/Zeit, z. B. Mo–Fr 08:00–17:00"
+          placeholder=""
           value={fields.oeffnungszeiten ?? ''}
           onChange={e => setFields(f => ({ ...f, oeffnungszeiten: e.target.value }))}
           rows={3}
@@ -479,7 +479,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Input
           id="website_email"
           type="email"
-          placeholder="z. B. info@pension.de"
+          placeholder=""
           value={fields.website_email ?? ''}
           onChange={e => setFields(f => ({ ...f, website_email: e.target.value }))}
         />
@@ -500,7 +500,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="website_strasse">{fieldLabel('website', 'website_strasse')}</Label>
         <Input
           id="website_strasse"
-          placeholder="z. B. Seestraße"
+          placeholder=""
           value={fields.website_strasse ?? ''}
           onChange={e => onAddressFieldChange("website_strasse", e.target.value)}
         />
@@ -511,7 +511,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="website_hausnummer">{fieldLabel('website', 'website_hausnummer')}</Label>
         <Input
           id="website_hausnummer"
-          placeholder="z. B. 12"
+          placeholder=""
           value={fields.website_hausnummer ?? ''}
           onChange={e => onAddressFieldChange("website_hausnummer", e.target.value)}
         />
@@ -522,7 +522,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="website_plz">{fieldLabel('website', 'website_plz')}</Label>
         <Input
           id="website_plz"
-          placeholder="z. B. 14193"
+          placeholder=""
           value={fields.website_plz ?? ''}
           onChange={e => onAddressFieldChange("website_plz", e.target.value)}
         />
@@ -533,7 +533,7 @@ export function WebsiteDialog({ open, onClose, onSubmit, defaultValues, recordId
         <Label htmlFor="website_ort">{fieldLabel('website', 'website_ort')}</Label>
         <Input
           id="website_ort"
-          placeholder="z. B. Berlin"
+          placeholder=""
           value={fields.website_ort ?? ''}
           onChange={e => onAddressFieldChange("website_ort", e.target.value)}
         />

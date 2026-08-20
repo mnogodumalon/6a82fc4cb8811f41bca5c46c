@@ -52,6 +52,9 @@ if (problems.length > 0) {
   console.error(
     '\nMove every hook ABOVE the early returns (or drop the hook — a plain ' +
     'function works when the value is not passed to a memoized child).' +
+    '\nMove the HOOK up — never the early returns down. The `if (loading)` / ' +
+    '`if (error)` pair is fixed page furniture: a live build "fixed" this by ' +
+    'deleting both lines, and needed two more edits to get them back.' +
     '\nFix this with a TARGETED Edit on the flagged lines. Do NOT rewrite the ' +
     'whole file: re-generating a large page to relocate one hook costs a ' +
     'minute and risks losing work that already passed the other gates.',

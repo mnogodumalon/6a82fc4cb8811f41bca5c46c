@@ -286,7 +286,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="vorname">{fieldLabel('besitzer', 'vorname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="vorname"
-          placeholder="z. B. Max"
+          placeholder=""
           value={fields.vorname ?? ''}
           onChange={e => setFields(f => ({ ...f, vorname: e.target.value }))}
           required
@@ -301,7 +301,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="nachname">{fieldLabel('besitzer', 'nachname')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="nachname"
-          placeholder="z. B. Müller"
+          placeholder=""
           value={fields.nachname ?? ''}
           onChange={e => setFields(f => ({ ...f, nachname: e.target.value }))}
           required
@@ -330,7 +330,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Input
           id="email"
           type="email"
-          placeholder="z. B. max@example.com"
+          placeholder=""
           value={fields.email ?? ''}
           onChange={e => setFields(f => ({ ...f, email: e.target.value }))}
         />
@@ -341,7 +341,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="strasse">{fieldLabel('besitzer', 'strasse')}</Label>
         <Input
           id="strasse"
-          placeholder="z. B. Hauptstraße"
+          placeholder=""
           value={fields.strasse ?? ''}
           onChange={e => setFields(f => ({ ...f, strasse: e.target.value }))}
         />
@@ -352,7 +352,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="hausnummer">{fieldLabel('besitzer', 'hausnummer')}</Label>
         <Input
           id="hausnummer"
-          placeholder="z. B. 42a"
+          placeholder=""
           value={fields.hausnummer ?? ''}
           onChange={e => setFields(f => ({ ...f, hausnummer: e.target.value }))}
         />
@@ -363,7 +363,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="plz">{fieldLabel('besitzer', 'plz')}</Label>
         <Input
           id="plz"
-          placeholder="z. B. 10115"
+          placeholder=""
           value={fields.plz ?? ''}
           onChange={e => setFields(f => ({ ...f, plz: e.target.value }))}
         />
@@ -374,7 +374,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="ort">{fieldLabel('besitzer', 'ort')}</Label>
         <Input
           id="ort"
-          placeholder="z. B. Berlin"
+          placeholder=""
           value={fields.ort ?? ''}
           onChange={e => setFields(f => ({ ...f, ort: e.target.value }))}
         />
@@ -385,7 +385,7 @@ export function BesitzerDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="notizen">{fieldLabel('besitzer', 'notizen')}</Label>
         <Textarea
           id="notizen"
-          placeholder="Besonderheiten, Allergien, Wünsche..."
+          placeholder=""
           value={fields.notizen ?? ''}
           onChange={e => setFields(f => ({ ...f, notizen: e.target.value }))}
           rows={3}

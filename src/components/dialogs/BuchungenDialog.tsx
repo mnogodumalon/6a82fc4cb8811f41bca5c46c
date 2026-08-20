@@ -383,7 +383,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="hund">{fieldLabel('buchungen', 'hund')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="hund"
-          placeholder="Welcher Hund kommt?"
+          placeholder=""
           items={hundeListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.name ?? r.record_id),
@@ -403,7 +403,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="besitzer">{fieldLabel('buchungen', 'besitzer')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="besitzer"
-          placeholder="Besitzer der Buchung"
+          placeholder=""
           items={besitzerListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.vorname ?? r.record_id),
@@ -423,7 +423,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="anreise">{fieldLabel('buchungen', 'anreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="anreise"
-          placeholder="Wann kommt der Hund an?"
+          placeholder=""
           mode="date"
           value={fields.anreise ?? null}
           onChange={v => setFields(f => ({ ...f, anreise: v ?? undefined }))}
@@ -439,7 +439,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="abreise">{fieldLabel('buchungen', 'abreise')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="abreise"
-          placeholder="Wann reist der Hund ab?"
+          placeholder=""
           mode="date"
           value={fields.abreise ?? null}
           onChange={v => setFields(f => ({ ...f, abreise: v ?? undefined }))}
@@ -457,7 +457,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
           value={lookupKey(fields.platz) ?? ''}
           onValueChange={v => setFields(f => ({ ...f, platz: v === 'none' ? undefined : v as any }))}
         >
-          <SelectTrigger id="platz" className="max-sm:h-11"><SelectValue placeholder="z. B. Platz 1, Platz 3" /></SelectTrigger>
+          <SelectTrigger id="platz" className="max-sm:h-11"><SelectValue placeholder="" /></SelectTrigger>
           <SelectContent>
             <SelectItem value="none">—</SelectItem>
             <SelectItem value="platz_1">{lookupLabel('buchungen', 'platz', 'platz_1') ?? 'Platz 1'}</SelectItem>
@@ -549,7 +549,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
           type="number"
           step="any"
           {...numberInputProps(formEnhancements, 'preis_gesamt')}
-          placeholder="z. B. 150,00"
+          placeholder=""
           value={fields.preis_gesamt !== undefined ? fields.preis_gesamt : (computedValues['preis_gesamt'] ?? '')}
           onChange={e => setFields(f => ({ ...f, preis_gesamt: clampNumberValue(formEnhancements, 'preis_gesamt', e.target.value) }))}
         />
@@ -606,7 +606,7 @@ export function BuchungenDialog({ open, onClose, onSubmit, defaultValues, record
         <Label htmlFor="interne_notizen">{fieldLabel('buchungen', 'interne_notizen')}</Label>
         <Textarea
           id="interne_notizen"
-          placeholder="Spezielle Vorkehrungen, Besonderheiten..."
+          placeholder=""
           value={fields.interne_notizen ?? ''}
           onChange={e => setFields(f => ({ ...f, interne_notizen: e.target.value }))}
           rows={3}

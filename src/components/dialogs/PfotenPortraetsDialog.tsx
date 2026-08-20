@@ -402,7 +402,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="hund">{fieldLabel('pfoten_portraets', 'hund')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="hund"
-          placeholder="Welcher Hund?"
+          placeholder=""
           items={hundeListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.name ?? r.record_id),
@@ -422,7 +422,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="besitzer">{fieldLabel('pfoten_portraets', 'besitzer')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="besitzer"
-          placeholder="Besitzer des Hundes"
+          placeholder=""
           items={besitzerListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.vorname ?? r.record_id),
@@ -442,7 +442,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="buchung">{fieldLabel('pfoten_portraets', 'buchung')}</Label>
         <Combobox
           id="buchung"
-          placeholder="Zugehörige Buchung (optional)"
+          placeholder=""
           items={buchungenListAll.map(r => ({
             id: r.record_id,
             label: String(r.fields.interne_notizen ?? r.record_id),
@@ -459,7 +459,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="widmung">{fieldLabel('pfoten_portraets', 'widmung')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Textarea
           id="widmung"
-          placeholder="Persönliche Nachricht an Besitzer..."
+          placeholder=""
           value={fields.widmung ?? ''}
           onChange={e => setFields(f => ({ ...f, widmung: e.target.value }))}
           rows={3}
@@ -474,7 +474,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="besondere_erlebnisse">{fieldLabel('pfoten_portraets', 'besondere_erlebnisse')}</Label>
         <Textarea
           id="besondere_erlebnisse"
-          placeholder="Lustige oder rührende Momente..."
+          placeholder=""
           value={fields.besondere_erlebnisse ?? ''}
           onChange={e => setFields(f => ({ ...f, besondere_erlebnisse: e.target.value }))}
           rows={3}
@@ -556,7 +556,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="erstellungsdatum">{fieldLabel('pfoten_portraets', 'erstellungsdatum')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="erstellungsdatum"
-          placeholder="Veröffentlichungsdatum"
+          placeholder=""
           mode="date"
           value={fields.erstellungsdatum ?? null}
           onChange={v => setFields(f => ({ ...f, erstellungsdatum: v ?? undefined }))}
@@ -572,7 +572,7 @@ export function PfotenPortraetsDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="zusatztext">{fieldLabel('pfoten_portraets', 'zusatztext')}</Label>
         <Textarea
           id="zusatztext"
-          placeholder="Weitere Infos, Anmerkungen..."
+          placeholder=""
           value={fields.zusatztext ?? ''}
           onChange={e => setFields(f => ({ ...f, zusatztext: e.target.value }))}
           rows={3}

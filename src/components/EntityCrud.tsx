@@ -12,6 +12,18 @@
  *       ? { label: …, onClick: () => … }
  *       : undefined,
  *   });
+ *
+ *   `top.type` carries the snake_case IDENTIFIER, NOT the camelCase key that
+ *   `crud.<entity>` uses — for multi-word entities the two differ. Take each
+ *   from its own column below, verbatim; a camelCase top.type narrows `top`
+ *   to `never` and costs a build cycle (TS2367 "have no overlap", then
+ *   TS2339 on top.record):
+ *     crud.besitzer  ·  top.type === 'besitzer'
+ *     crud.hunde  ·  top.type === 'hunde'
+ *     crud.buchungen  ·  top.type === 'buchungen'
+ *     crud.buchungsanfragen  ·  top.type === 'buchungsanfragen'
+ *     crud.website  ·  top.type === 'website'
+ *     crud.pfotenPortraets  ·  top.type === 'pfoten_portraets'
  *   …
  *   crud.besitzer.openCreate({ …defaults })   // create dialog, prefilled — defaults are
  *                                       // shape-tolerant: bare lookup keys / record ids are fine

@@ -546,9 +546,9 @@ export default function Startseite() {
                     <FormField label={tx('Größe des Hundes')} error={fieldErrors.hund_groesse}>
                       <div className="grid grid-cols-3 gap-2">
                         {([
-                          { key: 'klein', label: tx('Klein') + '\n(bis 10 kg)' },
-                          { key: 'mittel', label: tx('Mittel') + '\n(10–25 kg)' },
-                          { key: 'gross', label: tx('Groß') + '\n(über 25 kg)' },
+                          { key: 'klein', label: tx('Klein') + '\n' + tx('(bis 10 kg)') },
+                          { key: 'mittel', label: tx('Mittel') + '\n' + tx('(10–25 kg)') },
+                          { key: 'gross', label: tx('Groß') + '\n' + tx('(über 25 kg)') },
                         ] as const).map((opt) => (
                           <button
                             key={opt.key}

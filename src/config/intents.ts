@@ -43,9 +43,9 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
-  { path: '/intents/neue-buchung', label: { de: 'Neue Buchung', en: 'New booking' }, icon: IconCalendarPlus, description: 'Buchung in 3 Schritten schnell erfassen' },
-  { path: '/intents/anfrage-bestaetigen', label: { de: 'Anfrage bearbeiten', en: 'Handle request' }, icon: IconClipboardCheck, description: 'Buchungsanfrage pruefen und in eine Buchung umwandeln' },
-  { path: '/intents/pfoten-portraet', label: { de: 'Pfoten-Porträt', en: 'Paw Portrait' }, icon: IconPaw, description: 'Individuelles Pfoten-Portraet fuer einen Hund erstellen' },
+  { path: '/intents/neue-buchung', label: { de: 'Neue Buchung', en: 'New booking' }, icon: IconCalendarPlus, description: { de: 'Buchung in 3 Schritten schnell erfassen', en: 'Capture Booking in 3 Quick Steps' } },
+  { path: '/intents/anfrage-bestaetigen', label: { de: 'Anfrage bearbeiten', en: 'Handle request' }, icon: IconClipboardCheck, description: { de: 'Buchungsanfrage pruefen und in eine Buchung umwandeln', en: 'Review Booking Request and Convert to Booking' } },
+  { path: '/intents/pfoten-portraet', label: { de: 'Pfoten-Porträt', en: 'Paw Portrait' }, icon: IconPaw, description: { de: 'Individuelles Pfoten-Portraet fuer einen Hund erstellen', en: 'Create Individual Paw Portrait for a Dog' } },
   // </custom:intents>
 ];
 

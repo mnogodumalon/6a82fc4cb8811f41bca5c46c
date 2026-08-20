@@ -1157,7 +1157,7 @@ export const LABELS: Record<CoreLocale, LabelBundle> = {
           "widmung": "Personal Dedication",
           "besondere_erlebnisse": "Special Experiences During the Stay",
           "hund_foto": "Photo of Dog",
-          "erstellungsdatum": "Date Created",
+          "erstellungsdatum": "Creation Date",
           "zusatztext": "Additional Text / Remarks"
         },
         "lookups": {}
